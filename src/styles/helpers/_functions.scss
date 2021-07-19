@@ -1,0 +1,9 @@
+//----toRem-------------------
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@function rem($value) {
+    $remValue: (stripUnit($value) / stripUnit($html-fz)) + rem;
+    @return $remValue;
+}

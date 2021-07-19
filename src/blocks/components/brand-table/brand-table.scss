@@ -1,0 +1,31 @@
+.brand-table {
+  width     : 100%;
+  height    : 100%;
+  padding   : 50px;
+  overflow-y: auto;
+
+  &__row {
+    display      : flex;
+    margin-bottom: 13px;
+  }
+
+  &__cell {
+    font-size  : rem(14);
+    line-height: rem(14);
+    color      : $c-black;
+  }
+
+  &__cell:nth-child(2) {
+    flex        : 1 1 0%;
+    margin-right: 6px;
+    margin-left : 6px;
+  }
+
+  &__cell-title {
+    font-weight: 700;
+  }
+
+  &__cell-descr {
+    font-weight: 400;
+  }
+}

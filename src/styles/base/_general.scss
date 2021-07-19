@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: $html-fz;
+}
+.wrapper {
+    display              : -ms-grid;
+    display              : grid;
+    -ms-grid-columns     : 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows        : 90px 1fr 90px;
+    grid-template-rows   : 90px 1fr 90px;
+    width                : 100%;
+    min-height           : 100vh;
+    max-width            : 768px;
+    margin               : 0 auto;
+}
+.wrapper>*:nth-child(1) {
+    -ms-grid-row   : 1;
+    -ms-grid-column: 1;
+}
+.wrapper>*:nth-child(2) {
+    -ms-grid-row   : 2;
+    -ms-grid-column: 1;
+}
+.wrapper>*:nth-child(3) {
+    -ms-grid-row   : 3;
+    -ms-grid-column: 1;
+}
+body {
+    width      : 100%;
+    min-width  : 320px;
+    font-family: $ff;
+    font-weight: normal;
+    font-size  : rem(16);
+    line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+    padding    : 0;
+    margin     : 0;
+    font-weight: normal;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.link {
+    display        : inline-block;
+    text-transform : uppercase;
+    text-decoration: none;
+    cursor         : pointer;
+    outline        : none;
+    border         : none;
+    font-size      : 0;
+    font-size      : rem(16);
+    vertical-align : top;
+    color          : #ffffff;
+
+}
+
+.img-responsive {
+    width : 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 768px;
+    padding: 5px 0;
+    margin: 0 auto;
+    @media(min-width:$desktop) {
+        padding: 5px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+    margin : 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+.border-bottom-dash {
+    border-bottom:1px dashed $c-grey;
+}
+.xs-d-none {
+    display: none!important;
+    @media(min-width: $desktop) {
+        display : -ms-grid !important;
+        display: grid !important;
+        
+    }
+}
+.xs-order-1 {
+    order: 1;
+    @media(min-width: $desktop){
+        order: initial;
+    }
+}
+.xs-order-2 {
+    order: 2;
+    @media(min-width: $desktop){
+        order: initial;
+    }
+}
+.xs-order-3 {
+    order: 3;
+    @media(min-width: $desktop){
+        order: initial;
+    }
+}
+.xs-order-4 {
+    order: 4;
+    @media(min-width: $desktop){
+        order: initial;
+    }
+}
+.xs-order-5 {
+    order: 5;
+    @media(min-width: $desktop){
+        order: initial;
+    }
+}
+.bg-color-grey {
+    background-color: $c-grey;
+}
+.bg-color-grey-l {
+    background-color: $c-grey-l;
+}
+.bg-color-red-l {
+    background-color: $c-red-l;
+}
+.bg-color-blue {
+    background-color: $c-blue;
+}
+.bg-color-green-l {
+    background-color: $c-green-l;
+}
+.bg-color-yellow {
+    background-color: $c-yellow;
+}
+.bg-color-blue-l {
+    background-color: $c-blue-l;
+}
+.bg-color-orange {
+    background-color: $c-orange;
+}

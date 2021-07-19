@@ -1,0 +1,9 @@
+mixin brand-table(table)
+  .brand-table
+    each item in table
+      .brand-table__row 
+        .brand-table__cell
+          b.brand-table__cell-title|#{item.title}
+        .brand-table__cell.border-bottom-dash
+        .brand-table__cell
+          span.table__cell-descr|#{item.descr}

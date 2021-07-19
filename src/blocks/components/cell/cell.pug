@@ -1,0 +1,27 @@
+//-
+  --cell class--------------------------------------------
+
+      cell__big-left - 2colums left column size x2
+      cell__big-right - 2colums right column size x2
+
+  --cell background---------------------------------------
+
+      bg-color-red-l - bacground-color #ffc1c1
+      bg-color-blue-l - bacground-color #85b1f9
+      bg-color-grey - bacground-color #71787f
+      bg-color-green-l - bacground-color #c3f3e2
+      bg-color-yellow - bacground-color #fff48e
+      bg-color-blue-l - bacground-color #d9eaff
+      bg-color-orange - bacground-color #ee6956
+
+  --xs-order-n class--------------------------------------
+      xs-order-1,2,3,... - order cell in mobile
+
+mixin cell(item, isBlock)
+  if isBlock
+    div(class=`cell ${item.cellClass}`)
+      div(class=`cell__content ${item.cellContentClass}`)
+        span.cell__title|#{item.title}
+  else
+    div(class=`cell ${item.cellClass}`)
+      block

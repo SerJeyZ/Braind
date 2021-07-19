@@ -1,0 +1,61 @@
+-
+  const table =[
+    {title:'Тип' ,descr:'Дрель ударная'},
+    {title:'Бренд' ,descr:'Bosch'},
+    {title:'Страна-изготовитель' ,descr:'Венгрия'},
+    {title:'Макс. мощность, Вт' ,descr:'701'},
+    {title:'Питание' ,descr:'От сети 220В'},
+    {title:'Гарантия' ,descr:'2 года'},
+    {title:'Питание' ,descr:'От сети 220В'},
+    {title:'Упаковка' ,descr:'Пластиковый кейс'}
+    ]
+-
+  const promo1 = [
+    {cellClass:'bg-color-grey-l',cellContentClass:'cell__content--text-black',title:'Электроника'},
+    {cellClass:'bg-color-grey-l',cellContentClass:'cell__content--text-black',title:'Бытовая техника'},
+    {cellClass:'cell__long-bottom-left bg-color-grey-l',cellContentClass:'cell__content--text-black',title:'Детские товары'},
+    {cellClass:'bg-color-red-l',cellContentClass:'cell__content--text-black',title:'Подарочные наборы'},
+    {cellClass:'bg-color-blue',cellContentClass:'cell__content--text-black',title:'Последний шанс!'}
+  ]
+-
+  const promo2 = [
+    {cellClass:'bg-color-yellow xs-order-4',cellContentClass:'cell__content--text-black',title:'Удивительное рядом'},
+    {cellClass:'bg-color-yellow cell__long-top-right xs-order-1',cellContentClass:'cell__content--text-black',title:'Будь первым!'},
+    {cellClass:'bg-color-blue-l xs-order-5',cellContentClass:'cell__content--text-black',title:'Невероятный гений'},
+    {cellClass:'bg-color-yellow xs-order-2',cellContentClass:'cell__content--text-black',title:'Супер цены'},
+    {cellClass:'bg-color-orange xs-order-3',cellContentClass:'cell__content--text-black',title:'Выгодные предложения'}
+  ]
+-
+  const promo3 = [
+    {cellClass:'bg-color-grey',cellContentClass:'',title:'Кэшбэк 30%'},
+    {cellClass:'bg-color-grey',cellContentClass:'',title:'Успей купить!'}
+  ]
+main.main
+  .main__content 
+    +promo-block('promo-block--polifil-ms-1')
+      +cell({cellClass:'cell__big-left bg-color-grey'})
+        .cell__wrap-content 
+          +info-block()
+      each item in promo3
+        +cell(item)
+          .cell__wrap-content 
+            .cell__content 
+              span.cell__title|#{item.title}
+    +promo-block-md('promo-block-md--polifil-ms-3')
+      each item in promo1
+        +cell(item,true)
+    +promo-block('xs-d-none promo-block--polifil-ms-2')
+      +cell({cellClass:'bg-color-green-l'})
+        .cell__wrap-content
+          .cell__content.cell__content--text-black  
+            span.cell__title|Понятие модернизации понимает механизм власти
+      +cell({cellClass:'bg-color-green-l'})
+        .cell__wrap-content 
+          a(href="#").cell__content.cell__content--bosch-bg.cell__link
+            span.cell__title|Время мыть!
+      +cell({cellClass:'cell__big-right bg-color-green-l'})
+        .cell__wrap-content 
+          +brand-table(table)
+    +promo-block-md('promo-block-md--polifil-ms-4')
+      each item in promo2 
+        +cell(item,true)

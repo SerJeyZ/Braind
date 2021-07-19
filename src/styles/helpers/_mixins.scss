@@ -1,0 +1,31 @@
+
+//------grid-mixin-----------------------
+@function countFr($count, $width, $gap) {
+  $str: "";
+
+  @for $i from 1 through $count {
+    @if $i < $count {
+      $str: $str+$width+' '+$gap+' '
+    }
+
+    @else {
+      $str: $str+$width
+    }
+  }
+  @return #{$str};
+}
+@mixin grid($repeat-col:3,$col-width:1fr,$repeat-row:2,$row-width:1fr,$gap:10px) {
+  display              : -ms-grid;
+  display              : grid;
+  -ms-grid-columns     : countFr($repeat-col, $col-width,$gap);
+  grid-template-columns: repeat($repeat-col, $col-width);
+  -ms-grid-rows        : countFr($repeat-row, $row-width, $gap);
+  grid-template-rows   : repeat($repeat-row, $row-width);
+  gap                  : $gap;
+}
+@mixin col-row($repeat-col:3, $col-width:1fr, $repeat-row:2, $row-width:1fr, $gap:10px) {
+  -ms-grid-columns     : countFr($repeat-col, $col-width, $gap);
+  grid-template-columns: repeat($repeat-col, $col-width);
+  -ms-grid-rows        : countFr($repeat-row, $row-width, $gap);
+  grid-template-rows   : repeat($repeat-row, $row-width);
+}
